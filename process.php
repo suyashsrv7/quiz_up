@@ -1,5 +1,10 @@
 <?php
+ session_start();
  require("connection.php");
+  if(isset($_SESSION['scrname']))
+  {
+    header("Location:profile.php");
+  }
   function display_msg(){
   	echo 'wrong'; 
   }
@@ -141,7 +146,12 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login'])))
             $row = $result->fetch_assoc();
             if(md5($password) == $row['password'])
             {
-               header("Location:profile.php");
+               if(!isset($_SESSION['scrname']))
+               {
+                 $_SESSION['scrname'] = $scrname;
+                 header("Location:profile.php");
+               } 
+
             }
             else
             {
