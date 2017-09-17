@@ -1,0 +1,12 @@
+<?php
+	session_start();
+	if(isset($_SESSION['scrname']))
+	{
+		session_destroy();
+		header("Location:log-in.php");
+	}
+	else
+	{
+		header("Location:log-in.php");
+	}
+?>
