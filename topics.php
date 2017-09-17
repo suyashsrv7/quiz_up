@@ -11,6 +11,7 @@
 		$categories = many_rows($query);
 		$query = "SELECT * FROM `topics` WHERE 1";
 		$topics = many_rows($query);
+		echo "<form action='choosefrnz.php' method='post'>";
 		for($i=0;$i<count($categories);$i++)//generator
 		{
 			echo "<div class='category'>
@@ -30,13 +31,14 @@
 		     	{
 		     		if($categories[$i]['category_id']==$topics[$j]['category_id'])
 		     		 {
-		     		 	echo "<div class='topic-name'>".$topics[$j]['topic_name']."</div>";
+		     		 	echo "<input type='submit' class='topic-name' value='".$topics[$j]['topic_name']."'>";
 		     		 	$c++;
 		     		 }
 		     		 $j++;
 		     	}
 		     	
 		     echo "</div>";	
+		     echo "</form>";
 				  
 		}
 		
@@ -88,19 +90,20 @@
 			text-align: left;
         }
 		.topic-name{
-			height:10px;
-			width:90px;
-			border:1px solid #fff;
+			height:20px;
+			width:92px;
+			border:none;
 			display: inline-block;
-			margin:0 auto;
+			
 			margin-left:50px;
-			font-size: 12px;
+			font-size: 8px;
 			text-align: center;
 
 		}
 		</style>
 	</head>
 	<body>
+
 		
 		<!--<div class="category" id="c1">
 			<div class="name"><?php //echo $categories[0]['category_name']?></div>
