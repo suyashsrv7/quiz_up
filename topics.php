@@ -1,6 +1,11 @@
 <?php
 	session_start();
 	require("connection.php");
+	if(isset($_POST['name']))
+	{
+		$_SESSION['topics-name'] = $_POST['name'];
+		header("Location:choosefrnz.php");
+	}
 	if(!isset($_SESSION['scrname']))
 	{
 		header("Location:log-in.php");
@@ -11,7 +16,8 @@
 		$categories = many_rows($query);
 		$query = "SELECT * FROM `topics` WHERE 1";
 		$topics = many_rows($query);
-		echo "<form action='choosefrnz.php' method='post'>";
+		echo "<form action='topics.php' method='post' name='form' id='form'>
+		<input type='hidden' id='datain' name='name'>";
 		for($i=0;$i<count($categories);$i++)//generator
 		{
 			echo "<div class='category'>
@@ -31,7 +37,7 @@
 		     	{
 		     		if($categories[$i]['category_id']==$topics[$j]['category_id'])
 		     		 {
-		     		 	echo "<input type='submit' class='topic-name' value='".$topics[$j]['topic_name']."'>";
+		     		 	echo "<div class='topic-name' onclick='setsubmit(this)' id='".$topics[$j]['topic_name']."'>".$topics[$j]['topic_name']."</div>";
 		     		 	$c++;
 		     		 }
 		     		 $j++;
@@ -48,7 +54,7 @@
 	<head>
 		<style type="text/css">
 		body{
-			background-color: #eee;
+			background-color: #ffeecc;
 			
 		}
 		.container{
@@ -79,6 +85,7 @@
 		}
 		.topic:hover{
 			background-color: #99ebff;
+
 			
 		}
 		.name{
@@ -91,18 +98,30 @@
         }
 		.topic-name{
 			height:20px;
-			width:92px;
-			border:none;
+			width:90px;
+			border:1px solid #fff;	
 			display: inline-block;
 			
 			margin-left:50px;
-			font-size: 8px;
+			font-size: 10px;
 			text-align: center;
+			cursor: pointer;
 
+		}
+		.topic-name:hover{
+			cursor:hand;
 		}
 		</style>
 	</head>
 	<body>
+		<script>
+			function setsubmit(e)
+			{
+				e.id//topic name 
+				form.name.value = e.id;
+				document.getElementById('form').submit();
+			}
+		</script>
 
 		
 		<!--<div class="category" id="c1">

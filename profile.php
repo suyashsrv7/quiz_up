@@ -32,7 +32,7 @@
 		margin:0;
 	}
 	body{
-		background-color: #eee;
+		background-color: #ffeecc;
 	}
 	.nav{
 		height:40px;
