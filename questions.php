@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<style>
+#body
+{
+	background:url(th.jpg);
+	background-size:cover;
+}
+#value
+{
+	width:400px;
+	height:300px;
+	background-color:cyan;
+	text-align:center;
+	margin-left:450px;
+	margin-top:100px;
+}
+#action
+{
+	margin-left:450px;
+	margin-top:50px;
+	background-color:cyan;
+	padding-top:50px;
+	width:400px;
+	text-align:center;
+}
+</style>
 </head>
 <body>
-ENTER VALUES:-
+
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<div id="value">
+<b><i>ENTER VALUES</i></b><br><br>
 ID<input type="text" name="one"><br>
 TOPIC ID<input type="text" name="two"><br>
 QUESTION<input type="text" name="three"><br>
@@ -15,9 +41,15 @@ OPTION 3<input type="text" name="six"><br>
 OPTION 4<input type="text" name="seven"><br>
 ANSWER<input type="text" name="eight"><br>
 ORIGINAL ID<input type="text" name="nine"><br><br><br><br>
-<input type="radio" name="insert">INSERT<br>
-<input type="radio" name="update">UPDATE<br>
-<input type="radio" name="delete">DELETE<br>
+</div>
+<div id="action">
+<table>
+<tr>
+<td><input type="radio" name="insert">INSERT<br></td>
+<td><input type="radio" name="update">UPDATE<br></td>
+<td><input type="radio" name="delete">DELETE<br></td>
+</tr>
+</table>
 <input type="submit" name="submit">
 </form>
 <?php

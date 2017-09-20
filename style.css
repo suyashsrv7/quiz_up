@@ -1,0 +1,11 @@
+#body
+{
+	background:url(th.jpg);
+	background-size:cover;
+}
+#value
+{
+	width:400px;
+	height:500px;
+	background-color:cyan;
+}

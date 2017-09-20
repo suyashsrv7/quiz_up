@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<style>
+#body
+{
+	background:url(th.jpg);
+	background-size:cover;
+}
+#value
+{
+	width:400px;
+	height:300px;
+	background-color:cyan;
+	text-align:center;
+	margin-left:450px;
+	margin-top:100px;
+}
+#action
+{
+	margin-left:450px;
+	margin-top:50px;
+	background-color:cyan;
+	padding-top:50px;
+	width:400px;
+	text-align:center;
+}
+</style>
 </head>
-<body>
 
-ENTER VALUES:-
+<body>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<div id="value"><br><br><br>
+<b><i>ENTER VALUES<br><br></i></b>
 ID<input type="text" name="one"><br>
 FIRSTNAME<input type="text" name="two"><br>
 LASTNAME<input type="text" name="three"><br>
@@ -16,11 +41,17 @@ IMAGE<input type="text" name="six"><br>
 TYPE<input type="text" name="seven"><br>
 EMAIL<input type="text" name="eight"><br>
 ORIGINAL SCRNAME<input type="text" name="nine"><br><br><br><br>
-
-<input type="radio" name="insert">INSERT<br>
-<input type="radio" name="update">UPDATE<br>
-<input type="radio" name="delete">DELETE<br>
+</div>
+<div id="action">
+<table>
+<tr>
+<td><input type="radio" name="insert">INSERT<br><br></td>
+<td><input type="radio" name="update">UPDATE<br><br></td>
+<td><input type="radio" name="delete">DELETE<br><br></td>
+</tr>
+</table>
 <input type="submit" name="submit"><br>
+</div>
 </form>
 <?php
 require("connection.php");
