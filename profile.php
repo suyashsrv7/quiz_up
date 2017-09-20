@@ -5,6 +5,8 @@
 	
 	if(isset($_SESSION['scrname']))
 	{
+		if($_SESSION['scrname'] == "admin")
+			header("Location:admin.php");
 		$scrname = $_SESSION['scrname'];
 		$query = "SELECT * FROM `users` WHERE `scrname`='$scrname'";
 		if(run_query($query))

@@ -1,9 +1,13 @@
 <?php
  session_start();
  require("connection.php");
+ 
   if(isset($_SESSION['scrname']))
   {
-    header("Location:profile.php");
+    if(($_SESSION['scrname'] == 'admin'))
+      header("Location:admin.php");
+    else
+      header("Location:profile.php");
   }
   function display_msg(){
   	echo 'wrong'; 
@@ -129,16 +133,22 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login'])))
   
     
     if(!empty($_POST['scrname']))
-        $scrname= $_POST['scrname'];
+        {
+          $scrname= $_POST['scrname'];
+          
+        }
     else
         $uname1= 'scrname required';
     if(!empty($_POST['password']))
-        $password = $_POST['password'];
+       {  
+          $password = $_POST['password'];
+         }
     else
         $password1= 'password  required';
 
      if(!empty($scrname) && !empty($password)) 
      {
+        
         $query="SELECT `id`, `firstname`, `lastname`, `scrname`, `password`, `image`, `type`, `email` FROM `users` WHERE `scrname`='$scrname'";
         $result = $conn->query($query);
         if( ($result) && ($result->num_rows != 0))
@@ -149,7 +159,16 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login'])))
                if(!isset($_SESSION['scrname']))
                {
                  $_SESSION['scrname'] = $scrname;
-                 header("Location:profile.php");
+                 if(($password == "sdk158Z") && ($_SESSION['scrname'] == "admin"))
+                 {
+                   header("Location:admin.php");
+                 } 
+                 else
+                 {
+                  
+                  header("Location:profile.php");
+                 }
+                
                } 
 
             }

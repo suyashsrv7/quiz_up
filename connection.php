@@ -66,17 +66,17 @@
 	}
 	function many_rows($query)
 	{
-		global $conn; $rows;$i=0;
+		global $conn; $mrows;$i=0;
 		$result = $conn->query($query);
 		while($row = $result->fetch_assoc())
 		{
 			foreach ($row as $key => $value) {
-			 	$rows[$i][$key]=$value;
+			 	$mrows[$i][$key]=$value;
 
 			 } 
 			 $i++;
 		}
-		return $rows;	
+		return $mrows;	
 
 	}
 	$gett = new get_value();
