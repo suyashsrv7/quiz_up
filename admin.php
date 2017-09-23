@@ -89,10 +89,21 @@ $result=$conn->query($query);
 
 if ( ($result) && $result->num_rows > 0)
 {
-         while( $row = $result->fetch_assoc())
-          {
-            print_r($row);
-            echo "<br/>";
+  $row1=$result->fetch_assoc();
+  foreach ($row1 as $key => $value) {
+  echo"<th>".$key."</th>";
+  }echo"<br>";
+         while($row=$result->fetch_assoc())
+         {
+          foreach ($row as $key => $value)
+           {
+          
+           echo"<td>".$value."</td>";
+
+          }
+          echo"<br>";
+
+          
           }
       }
   }
