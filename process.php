@@ -117,6 +117,9 @@ else
         if ($conn->query($query)==TRUE)
         {
            echo "registered successfully";
+           $last_id = $conn->insert_id;
+           $query = "INSERT INTO `user_medals`(`user_id`, `xp`, `badge`) VALUES ('$last_id','0','Beginner')";
+           $conn->query($query);
            header("Location:log-in.php");
         }
         else

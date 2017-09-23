@@ -68,6 +68,11 @@
 	{
 		global $conn; $mrows;$i=0;
 		$result = $conn->query($query);
+		if($result->num_rows == 0)
+		{
+			$mrows = false;
+			return $mrows;
+		}
 		while($row = $result->fetch_assoc())
 		{
 			foreach ($row as $key => $value) {

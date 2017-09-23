@@ -18,7 +18,7 @@ else
 	$topic_id=$row['topic_id'];
 	$query = "SELECT * FROM `questions` WHERE `topic_id` = '$topic_id'";
 	$questions = many_rows($query);
-	print_r($questions);
+	
 	 $i = 0 ;
 	
 
@@ -84,6 +84,7 @@ else
             document.getElementById('option2').innerHTML = " <?php echo $questions[$i]['option_2'] ;?>";
             document.getElementById('option3').innerHTML = " <?php echo $questions[$i]['option_3'] ;?>";
             document.getElementById('option4').innerHTML = " <?php echo $questions[$i]['option_4'] ;?>";
+
             <?php $i++; ?>
 		 }
 		</script>
