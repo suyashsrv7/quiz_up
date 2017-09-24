@@ -7,7 +7,6 @@ require("connection.php");
 <style>
 #body
 {
-  background:url(th.jpg);
   background-size:cover;
 }
 #head
@@ -44,6 +43,10 @@ font-size:200%;
   color:white;
   background-color:grey;
 
+}
+#one
+{
+  width:100%;
 }
 </style>
 	
@@ -90,22 +93,53 @@ $result=$conn->query($query);
 if ( ($result) && $result->num_rows > 0)
 {
   $row1=$result->fetch_assoc();
+  echo "<table border='1'>
+  <tr>";
   foreach ($row1 as $key => $value) {
   echo"<th>".$key."</th>";
-  }echo"<br>";
+  }
+  echo"</tr>";
+  
          while($row=$result->fetch_assoc())
-         {
+         {echo "<tr>";
           foreach ($row as $key => $value)
            {
           
            echo"<td>".$value."</td>";
 
           }
-          echo"<br>";
+          echo "<form method='post'>";
+          echo "<td><input type='submit' name='".$row['id']."' value='delete'></td>";
+          echo "<td><input type='submit' name='".$row['id']."' value='update'></td>";
+          echo "</form>";
+        }
+        
+          echo"</tr>
+          </table>";
 
           
           }
-      }
+
+
+         if($_SERVER["REQUEST_METHOD"] == "POST") 
+         { while($row1=$result->fetch_assoc());
+
+          foreach ($row1 as $key => $value)
+          {
+            if(isset($_POST['$key']))
+            {
+              $query1="DELETE FROM `users` WHERE `id`='$key'";
+            
+              if($conn->query($query1)==TRUE)
+                echo "deleted successfully";
+              else
+                echo "error";
+          }
+
+         }
+       }
+
+      
   }
         ?>
         <div id="work">
