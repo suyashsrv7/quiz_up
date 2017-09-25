@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="10 10 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g>
+	<circle id="cl" fill="#1c77a1" cx="50" cy="50" r="40">
+		<animate attributeName="fill" attributeType="xml" type="color" from="" to="" dur="3s" repeatCount="indefinite" />
+	</circle>
+</g>
+<g>
+	<circle  fill="none" stroke="#bfe2f3" stroke-miterlimit="10" stroke-dasharray="11.7779,11.7779" cx="50" cy="50" r="30">
+	<animateTransform attributeName="transform" attributeType="xml" type="rotate" from="0 50 50" to="360 50 50" dur="2s" repeatCount="indefinite" /> 
+</circle>
+</g>
+<g>
+	<path fill="#52cecb" d="M46.488,36.002c-4.327-0.069-8.123,1.842-9.637,3.976c-4.018,5.662,7.528,13.603,8.433,13.291
+		c0.611-0.21-4.092-4.02-1.893-7.384c2.523-3.859,11.694-3.408,12.047-5.793C55.696,38.339,51.047,36.075,46.488,36.002z">
+		<animateTransform attributeName="transform" attributeType="xml" type="translate" values="0,6;0,-6;0,6" dur="2s" repeatCount="indefinite" />
+	</path>
+	<path fill="#f7f9d6" d="M50.987,36.002c4.327-0.069,8.123,1.842,9.637,3.976c4.018,5.662-7.528,13.603-8.433,13.291
+		c-0.611-0.21,4.092-4.02,1.893-7.384c-2.523-3.859-11.694-3.408-12.047-5.793C41.779,38.339,46.429,36.075,50.987,36.002z">
+		<animateTransform attributeName="transform" attributeType="xml" type="translate" values="0,6;0,-6;0,6" dur="2s" repeatCount="indefinite" />
+	</path>
+	<path fill="#72e4ea" d="M31,49.439l2.694,3.955c0.236,0.347,0.578,0.631,0.99,0.822l14.214,6.592l14.109-5.483
+		c0.339-0.132,0.629-0.342,0.838-0.607L68,49.439l-12.262,7.678l-13.71-1.993L31,49.439z">
+		<animateTransform attributeName="transform" attributeType="xml" type="translate" values="0,6;0,-6;0,6" dur="2s" repeatCount="indefinite" />
+	</path>
+	<path fill="#ele7ea" d="M42.028,60.808l-6.023,8.859h9.721l2.483-4.43h4.819l2.42,4.43h6.701l-4.819-8.859L53.283,58.9
+		c-2.349-1.107-5.201-1.083-7.524,0.065L42.028,60.808z">
+		<animateTransform attributeName="transform" attributeType="xml" type="translate" values="0,6;0,-6;0,6" dur="2s" repeatCount="indefinite" />
+	</path>
+	<path fill="#0B0B0C" d="M48.51,49.512c-0.506-0.374-1.578,0.009-2.108,0.295c-0.568,0.307-0.608,0.553-0.903,0.701
+		c-1.501,0.755-5.384-3.14-5.636-2.953c-0.217,0.161,1.805,3.687,5.464,4.356c0.611,0.112,2.01,0.367,2.84-0.332
+		C48.841,51.01,49.033,49.898,48.51,49.512z">
+		<animateTransform attributeName="transform" attributeType="xml" type="translate" values="0,6;0,-6;0,6" dur="2s" repeatCount="indefinite" />
+	</path>
+	<path fill="#0B0B0C" d="M49.611,49.512c0.506-0.374,1.578,0.009,2.108,0.295c0.568,0.307,0.608,0.553,0.903,0.701
+		c1.501,0.755,5.384-3.14,5.636-2.953c0.217,0.161-1.805,3.687-5.464,4.356c-0.611,0.112-2.01,0.367-2.84-0.332
+		C49.281,51.01,49.089,49.898,49.611,49.512z">
+		<animateTransform attributeName="transform" attributeType="xml" type="translate" values="0,6;0,-6;0,6" dur="2s" repeatCount="indefinite" />
+	</path>
+	<path fill="#0B0B0C" d="M48.855,49.992">
+		<animateTransform attributeName="transform" attributeType="xml" type="translate" values="0,6;0,-6;0,6" dur="2s" repeatCount="indefinite" />
+	</path>
+</g>
+</svg>
+

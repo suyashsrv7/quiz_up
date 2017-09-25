@@ -1,0 +1,265 @@
+*{
+			padding: 0px;
+			margin:0px;
+		}
+		.background
+		{
+			background-color: #172f3a;
+			width: 100%;
+      height: 100vh;
+        
+		}
+     [class*="col-"]
+   {
+    float:left;
+    padding: 15px;
+   }
+   .row::after
+   {
+    content: "";
+    clear: both;
+    display: table;
+    padding: 30px;
+   }
+		.container
+		{
+			left:0;right:0; top:0; bottom:0;
+			background-color: white;
+			border-radius: 30px;
+			width: 700px;
+			height: 180px;
+			margin: auto;
+
+		}
+		.profilePic
+		{
+			width: 180px;
+			height: 150px;
+			border-radius:30px;
+			margin-left: 20px;
+      margin-top:15px;
+			background-color: #3ab3eb;
+
+			position: absolute;
+		}
+		.name
+		{
+			width: 180px;
+			height: 20px;
+			border-radius:20px;
+      margin-left: 20%;			
+			background-color: #3ab3eb;
+			margin-top: 35px;
+			position: absolute;
+  		}
+      .username
+    {
+      width: 180px;
+      height: 20px;
+      border-radius:20px;
+      margin-left: 20%;     
+      background-color: #3ab3eb;
+      margin-top: 75px;
+      position: absolute;
+    }
+    .badge
+    {
+      width: 180px;
+      height: 20px;
+      border-radius:20px;
+      margin-left: 20%;     
+      background-color: #3ab3eb;
+      margin-top: 115px;
+      position: absolute;
+    }
+		
+		.nav
+		{
+			height: 30px;
+			width: 100%;
+			background-color:  #1c77a1;
+			margin-bottom: 10px;
+			color: white;
+			position: relative;
+			box-shadow: 2px 2px 10px black;
+		 }
+		.title
+		{
+			position: absolute;
+		    text-align: center;
+			top: 5px;
+			left: 620px;
+			font-weight: bolder;
+		}
+		
+		.container:hover
+		{
+			animation-name: change;
+			animation-duration: 3s;
+		}
+		@keyframes change 
+		{
+			0%   {background-color:##98aeae;  left:0; top:0;}
+    50%  {background-color:#bcf8f8; left:90%; top:0;}
+
+		}
+		.star
+	{
+			position: absolute;
+   	background-size: cover;
+   	width: 90px;
+   	height: 90px;
+   	left: 80%;
+   	top: 20%;
+   	animation-name: twinkle;
+   	animation-duration:.5s ;
+   	animation-iteration-count: infinite;
+   	animation-direction: alternate;
+
+	}
+	@keyframes twinkle{ 
+	0%{width: 92px; height: 92px;}
+	100%{width: 85px; height: 85px;} 
+}
+.planet1{position: absolute;width: 80px;height: 80px;left: 80%;top: 50%;}
+.planet2{position: absolute;width: 100px;height: 80px;left: 88%;top: 59%;}
+.planet3{position: absolute;width: 120px;height: 80px;left: 82%;top: 85%;}
+.planet4{position: absolute;width: 200px;height: 80px;left: 88%;top: 20%;}
+.rocket{position: absolute;width: 120px;height: 120px; left:86%;
+        animation-name:boast ;animation-iteration-count:infinite; ;animation-direction:all; ;animation-duration:38s ;}
+        @keyframes boast {
+                          0%{left:86%;top:108% ;}
+                          99%{left:86%;top:-25% ;}
+                          100%{left:86%;top: -25%%;}
+        }
+		.cloud4
+
+   {
+   	position: absolute;
+   	
+   	width: 90px;
+   	height: 90px;
+   	
+   	animation-name: smoke4;
+   	animation-duration: 36s;
+   	animation-direction: all;
+   	animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+   	
+   }
+   @keyframes smoke4 {
+   	from{left:10%;top: 108%;}
+   		to{left:10%;top: -18%;}
+   }
+   .cloud3
+   {
+   	position: absolute;
+   	
+   	width: 90px;
+   	height: 90px;
+   	
+   	animation-name: smoke3;
+   	animation-duration: 25s;
+   	animation-direction: all;
+   	animation-iteration-count: infinite;
+   	
+   }
+   @keyframes smoke3 {
+   	from{left:5%;top: 105%;}
+   		to{left:5%;top: -22%;}
+   } 
+   .cloud2
+   {
+   	position: absolute;
+   	
+   	width: 90px;
+   	height: 90px;
+   	
+   	animation-name: smoke2;
+   	animation-duration: 14s;
+   	animation-direction: all;
+   	animation-iteration-count: infinite;
+   }
+   @keyframes smoke2 {
+   	from{left:15%;top: 98%;}
+   		to{left:15%;top: -14%;}
+   }
+   .cloud1
+   {
+   	position: absolute;
+   	
+   	width: 150px;
+   	height: 150px;
+   	
+   	animation-name: smoke1;
+   	animation-duration: 14s;
+   	animation-direction: all;
+   	animation-iteration-count: infinite;
+   }
+   @keyframes smoke1 {
+   	from{left:2%;top: 95%;}
+   		to{left:2%;top: -15%;}
+   }
+
+    .bubble1 , .bubble2 , .bubble3 , .bubble4
+    {
+    	width: 50px;
+    	height: 50px;
+    	border-radius: 25px;
+    	background-color: white;
+    	position: absolute;
+    	text-align: center;
+
+    	animation-direction: alternate-reverse;
+    	animation-duration: 4s;
+    	
+    	animation-iteration-count: infinite;
+    }
+    .bubble1{
+    	animation-name: up1;
+    }
+    .bubble2{
+    	animation-name: up2;
+    }
+    .bubble3{
+    	animation-name: up3;
+    }
+    .bubble4{
+    	animation-name: up4;
+    }
+  
+    @keyframes up1 
+    {
+    	0%{left: 60px;top:90px}
+    	25%{left: 60px;top:40px}
+    	50%{left: 120px;top:40px}
+    	75%{left: 120px;top:90px}
+    	100%{left: 60px;top:90px}
+
+    }
+    @keyframes up2 
+    {
+    	0%{left: 60px;top:160px}
+    	25%{left: 60px;top:110px}
+    	50%{left: 120px;top:110px}
+    	75%{left: 120px;top:160px}
+    	100%{left: 60px;top:160px}
+    }
+    @keyframes up3 
+    {
+    	0%{left: 60px;top:230px}
+    	25%{left: 60px;top:180px}
+    	50%{left: 120px;top:180px}
+    	75%{left: 120px;top:230px}
+    	100%{left: 60px;top:230px}
+    }
+    @keyframes up4 
+    {
+    	0%{left: 60px;top:300px}
+    	25%{left: 60px;top:250px}
+    	50%{left: 120px;top:250px}
+    	75%{left: 120px;top:300px}
+    	100%{left: 60px;top:300px}
+    }
+    
+

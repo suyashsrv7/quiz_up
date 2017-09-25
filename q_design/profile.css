@@ -1,0 +1,239 @@
+*{  box-sizing: border-box;
+    margin: 0; 
+   padding: 0;}
+   .background
+		{
+			background-color: #172f3a;
+			width: 100%;
+      height: 100vh;
+      overflow: 
+        
+		}
+
+   [class*="col-"]
+   {
+   	float:left;
+   	padding: 15px;
+   }
+   .row::after
+   {
+   	content: "";
+   	clear: both;
+   	display: table;
+   	padding: 30px;
+   }
+/*small screen*/
+    .col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+/* medium screen */
+@media(min-width: 400px){
+	.col-mid-1 {width: 8.33%;}
+	.col-mid-2 {width: 16.66%;}
+	.col-mid-3 {width: 25%;}
+	.col-mid-4 {width: 33.33%;}
+	.col-mid-5 {width: 41.66%;}
+	.col-mid-6 {width: 50%;}
+	.col-mid-7 {width: 58.33%;}
+	.col-mid-8 {width: 66.66%;}
+	.col-mid-9 {width: 75%;}
+	.col-mid-10 {width: 83.33%;}
+	.col-mid-11 {width: 91.66%;}
+	.col-mid-12 {width: 100%;}
+/* large screen */
+@media(min-width: 940px){
+	.col-lg-1 {width: 8.33%;}
+	.col-lg-2 {width: 16.66%;}
+	.col-lg-3 {width: 25%;}
+	.col-lg-lg-4 {width: 33.33%;}
+	.col-lg-5 {width: 41.66%;}
+	.col-lg-6 {width: 50%;}
+	.col-lg-7 {width: 58.33%;}
+	.col-lg-8 {width: 66.66%;}
+	.col-lg-9 {width: 75%;}
+	.col-lg-10 {width: 83.33%;}
+	.col-lg-11 {width: 91.66%;}
+	.col-lg-12 {width: 100%;}
+}	
+nav{
+	background-color: #1c77a1;
+	border: 2px solid white;
+	text-align: center;
+	font-family: Tempus Sans ITC;
+	font-weight: bolder;
+	display: block;
+	padding-top: 2px;
+	box-shadow: 4px 3px #6d6c6c;
+	color: white;
+}
+.container1{
+	background-color: white;
+	height:200px;
+	border-radius: 15px;
+	box-shadow: 4px 3px #6d6c6c;
+}
+.container2{
+	background-color: white;
+	height:200px;
+	border-radius: 15px;
+	box-shadow: 4px 3px #6d6c6c;
+}
+.container3{
+	background-color: white;
+	height:250px;
+	border-radius: 15px;
+	box-shadow: 4px 3px #6d6c6c;
+}
+.profilepic
+		{
+			
+		}
+  .name
+		{
+			width: 220px;
+			height: 25px;
+			border-radius:20px;
+            margin-left: 15%;			
+			background-color: #3ab3eb;
+			margin-top: 35px;
+			position: absolute;
+			color: white;
+			 text-align: center;
+  		}
+   .userid
+    {
+      width: 220px;
+      height: 25px;
+      border-radius:20px;
+      margin-left: 15%;     
+      background-color: #3ab3eb;
+      margin-top: 75px;
+      position: absolute;
+      color: white;
+       text-align: center;
+    }
+    .badge
+    {
+      width: 220px;
+      height: 25px;
+      border-radius:20px;
+      margin-left: 15%;     
+      background-color: #3ab3eb;
+      margin-top: 115px;
+      position: absolute;
+      color: white;
+      text-align: center;
+    }
+    .star0{ width: 30px; height: 30px; position: absolute; top: 10%; left:50%;
+    animation-name: twinkle;
+   	animation-duration:.5s ;
+   	animation-iteration-count: infinite;
+   	animation-direction: alternate; }
+   	@keyframes twinkle{ 
+	0%{width: 30px; height: 30px;}
+	100%{width: 32px; height: 32px;} 
+}
+.star1{ width: 30px; height: 30px; position: absolute; top: 8%; left:10%;
+    animation-name: twinkle;
+   	animation-duration:.7s ;
+   	animation-iteration-count: infinite;
+   	animation-direction: alternate; }
+   	@keyframes twinkle{ 
+	0%{width: 30px; height: 30px;}
+	100%{width: 33px; height: 30px;} 
+}
+.star2{ width: 30px; height: 30px; position: absolute; top: 9%; left:80%;
+    animation-name: twinkle;
+   	animation-duration:1.5s ;
+   	animation-iteration-count: infinite;
+   	animation-direction: alternate; }
+   	@keyframes twinkle{ 
+	0%{width: 30px; height: 30px;}
+	100%{width: 34px; height: 32px;} 
+}
+.star3{ width: 30px; height: 30px; position: absolute; top: 7%; left:35%;
+    animation-name: twinkle;
+   	animation-duration:1s ;
+   	animation-iteration-count: infinite;
+   	animation-direction: alternate; }
+   	@keyframes twinkle{ 
+	0%{width: 32px; height: 32px;}
+	100%{width: 28px; height: 28px;} 
+}
+.cloud
+   {
+   	position: absolute;
+   	
+   	width: 90px;
+   	height: 90px;
+   	
+   	animation-name: smoke4;
+   	animation-duration: 36s;
+   	animation-direction: all;
+   	animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+   	
+   }
+   @keyframes smoke4 {
+   	from{left:0%;top: 110%;}
+   		to{left:100%;top: 110%;}
+   }
+
+   .cloud1
+   {
+   	position: absolute;
+   	
+   	width: 90px;
+   	height: 90px;
+   	
+   	animation-name: smoke3;
+   	animation-duration: 25s;
+   	animation-direction: all;
+   	animation-iteration-count: infinite;
+   	
+   }
+   @keyframes smoke3 {
+   	from{left:0%;top: 60%;}
+   		to{left:100%;top: 60%;}
+   } 
+   .cloud2
+   {
+   	position: absolute;
+   	
+   	width: 90px;
+   	height: 90px;
+   	
+   	animation-name: smoke2;
+   	animation-duration: 14s;
+   	animation-direction: all;
+   	animation-iteration-count: infinite;
+   }
+   @keyframes smoke2 {
+   	from{left:0%;top: 100%;}
+   		to{left:100%;top: 100%;}
+   }
+   .cloud3
+   {
+   	position: absolute;
+   	
+   	width: 150px;
+   	height: 150px;
+   	
+   	animation-name: smoke1;
+   	animation-duration: 14s;
+   	animation-direction: all;
+   	animation-iteration-count: infinite;
+   }
+   @keyframes smoke1 {
+   	from{left:0%;top: 38%;}
+   		to{left:100%;top: 38%;}
+   }

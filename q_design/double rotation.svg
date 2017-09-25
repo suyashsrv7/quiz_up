@@ -1,0 +1,24 @@
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 46.3 46.4" style="enable-background:new 0 0 46.3 46.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-dasharray:1.963,1.963;}
+	.st1{fill:none;stroke:#29ABE2;stroke-miterlimit:10;stroke-dasharray:2;}
+	.st2{fill:none;stroke:#F7931E;stroke-miterlimit:10;stroke-dasharray:2;}
+</style>
+<g>
+	<circle class="st0" cx="22.8" cy="23.1" r="15">
+	
+		<animateTransform  accumulate="none" additive="replace" attributeName="transform" attributeType="xml" calcMode="linear" dur="3s" fill="remove" from="360 22.8 23.1" repeatCount="indefinite" restart="always" to="0 22.8 23.1" type="rotate">
+		</animateTransform>
+	</circle>
+</g>
+<circle class="st1" cx="22.8" cy="23.1" r="10">
+<animateTransform  accumulate="none" additive="replace" attributeName="transform" attributeType="xml" calcMode="linear" dur="4s" fill="remove" from="0 22.8 23.1" repeatCount="indefinite" restart="always" to="360 22.8 23.1" type="rotate">
+	</animateTransform>
+</circle>
+<circle class="st2" cx="22.8" cy="23.1" r="22">
+<animateTransform  accumulate="none" additive="replace" attributeName="transform" attributeType="xml" calcMode="linear" dur="5s" fill="remove" from="0 22.8 23.1" repeatCount="indefinite" restart="always" to="360 22.8 23.1" type="rotate">
+	</animateTransform>
+</circle>
+</svg>

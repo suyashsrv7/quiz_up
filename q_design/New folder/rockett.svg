@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g>
+	<ellipse fill="#29ABE2" cx="41.5" cy="56" rx="4.5" ry="9"/>
+	<g>
+		<path fill="#E6E6E6" d="M46,42.5c0,9.665-3.806,17.5-8.5,17.5S29,52.165,29,42.5S35,10,40,15C42,17,46,32.835,46,42.5z"/>
+	</g>
+	<ellipse fill="#29ABE2" cx="31.589" cy="55.206" rx="4.589" ry="12.206"/>
+</g>
+<polygon id="o1" fill="#FFFFFF" stroke="#72E4EA" stroke-width="0.5" stroke-miterlimit="10" points="30,77.5 27.822,77.588 26.659,79.432 
+	25.902,77.387 23.789,76.851 25.5,75.5 25.357,73.325 27.171,74.534 29.195,73.726 28.605,75.824 "/>
+	<animate xlink:href="#o1" attributeName="stroke" from="#72E4EA" to="#172f3a" dur="1.2s" repeatCount="indefinite" />
+<polygon fill="#FFFFFF" stroke="#72E4EA" stroke-width="0.5" stroke-miterlimit="10" points="38.5,69.5 37.411,69.544 
+	36.829,70.466 36.451,69.444 35.395,69.176 36.25,68.5 36.178,67.412 37.085,68.017 38.098,67.613 37.803,68.662 "/>
+<polygon fill="#FFFFFF" stroke="#72E4EA" stroke-width="0.5" stroke-miterlimit="10" points="40.667,76.378 39.915,75.605 
+	38.852,75.786 39.355,74.832 38.854,73.877 39.917,74.061 40.67,73.29 40.824,74.357 41.79,74.835 40.823,75.311 "/>
+<polygon fill="#FFFFFF" stroke="#72E4EA" stroke-width="0.5" stroke-miterlimit="10" points="37.5,84.167 36.961,83.075 
+	35.756,82.9 36.628,82.05 36.422,80.85 37.5,81.417 38.578,80.85 38.372,82.05 39.244,82.9 38.039,83.075 "/>
+<polygon id="o" fill="#FFFFFF" stroke="#72E4EA" stroke-width="0.5" stroke-miterlimit="10" points="47.187,72.124 46.41,71.741 
+	45.605,72.065 45.785,71.321 45.165,70.766 46.053,70.69 46.474,70.023 46.844,70.72 47.724,70.862 47.064,71.369 "/>
+	<animate xlink:href="#o" attributeName="stroke" from="#72E4EA" to="#172f3a" dur="1s" repeatCount="indefinite" />
+</svg>

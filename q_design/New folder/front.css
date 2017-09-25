@@ -1,0 +1,163 @@
+.B{
+    background-image: url("bg3.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+    
+
+}
+
+.playnow{
+        font-family: arial;
+        font-weight: bolder;
+        border-radius: 255px 255px;
+       color: #4d51f2;
+       text-align: center;
+       
+       width: 450px;  height: 450px;
+        font-size: 80px;
+        left:78.8%;
+        top:48.5%;
+        position: absolute;
+        padding: 15px;
+        border: 30px solid #172f3a;
+        transform:  rotateY(0deg);
+        transform-style:preserve-3d; ;
+        transition-duration: 2s;
+}
+.playnow:hover{
+    color: #4d51f2;
+    font-size: 100px;
+    transform: rotateY(360deg);
+    
+}
+.m{
+    position: absolute; width: 600px; height: 600px;top:50.5% ;left: 79.3%;
+    animation-name: sardarji;
+    animation-direction: alternate-reverse;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+     cursor:pointer;
+
+}
+@keyframes sardarji {
+    0%{left: 0%;top: 75%;}
+    
+    100%{left: 88%;top: 75%;}
+}
+
+ .ufo1{
+   background-image: url("Glogo.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+ 	width: 24px;
+ 	height: 17px;
+ 	
+ 	border-radius: 100px 100px 45px 45px;
+ 	position: relative;
+ 	animation-name: flying;
+ 	animation-iteration-count: infinite;
+ 	animation-duration: 18s;
+    animation-direction: alternate;
+ 	
+
+ 	 }
+  @keyframes flying {
+ 	  0%   { left:0; top:0;}
+    20%  {left:94%; top:0;}
+   22%  { left:94%; top:200px;}
+    42%  { left:0; top:200px;}
+    44% { left:0; top:400px;}
+     64% { left:94%; top:400px;}
+     66% { left:94%; top:600px;}
+     86%  { left:-10%; top:600px;}
+    88% {left:-10%; top:0;}
+     98% {left:0; top:0px;}
+     100% { left:0; top:0px;}
+ }
+ .ufo2{
+    background-image: url("Glogo.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+    width: 240px;
+    height: 170px;
+    border-radius: 125px 125px 45px 45px;
+    position: absolute;
+    animation-name: flyingg;
+    animation-iteration-count: infinite;
+    animation-duration: 19s;
+    animation-direction: alternate-reverse;
+    
+
+     }
+  @keyframes flyingg {
+      0%   { left:0; top:0;}
+    20%  { left:94%; top:0;}
+   22%  { left:94%; top:200px;}
+    42%  { left:0; top:200px;}
+    44% { left:0; top:400px;}
+     64% { left:94%; top:400px;}
+     66% { left:94%; top:600px;}
+     86%  { left:-10%; top:600px;}
+    88% { left:-10%; top:0;}
+     98% { left:0; top:0px;}
+     100% { left:0; top:0px;}
+ }
+ .ufo3{
+    background-image: url("Glogo.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+    width: 240px;
+    height: 170px;
+   
+    position: absolute;
+    animation-name: flyinggg;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-direction: alternate-reverse;
+    
+
+     }
+  @keyframes flyinggg {
+      0%   { left:0; top:0;}
+    20%  {left:94%; top:0;}
+   22%  { left:94%; top:200px;}
+    42%  { left:0; top:200px;}
+    44% { left:0; top:400px;}
+     64% { left:94%; top:400px;}
+     66% { left:94%; top:600px;}
+     86%  { left:-10%; top:600px;}
+    88% { left:-10%; top:0;}
+     98% { left:0; top:0px;}
+     100% { left:0; top:0px;}
+ }
+ .ufo4{
+   background-image: url("Glogo.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+    width: 240px;
+    height: 170px;
+    
+    position: absolute;
+    animation-name: flyingggg;
+    animation-iteration-count: infinite;
+    animation-duration: 35s;
+    animation-direction: alternate;
+    
+
+     }
+  @keyframes flyingggg {
+      0%   { left:0; top:0;}
+    20%  { left:94%; top:0;}
+   22%  { left:94%; top:200px;}
+    42%  { left:0; top:200px;}
+    44% { left:0; top:400px;}
+     64% { left:94%; top:400px;}
+     66% {left:94%; top:600px;}
+     86%  { left:-10%; top:600px;}
+    88% { left:-10%; top:0;}
+     98% { left:0; top:0px;}
+     100% { left:0; top:0px;}
+ }
+ 
