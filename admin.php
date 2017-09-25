@@ -108,9 +108,10 @@ if ( ($result) && $result->num_rows > 0)
            echo"<td>".$value."</td>";
 
           }
-          echo "<form method='post'>";
-          echo "<td><input type='submit' name='".$row['id']."' value='delete'></td>";
-          echo "<td><input type='submit' name='".$row['id']."' value='update'></td>";
+          $id=$row['id'];
+          echo "< form method='post' action = '".htmlspecialchars($_SERVER['PHP_SELF'])."' >";
+          echo "<td><input type='submit'  name='".$id."' value='delete'></td>";
+          echo "<td><input type='submit' name='".$id."' value='update'></td>";
           echo "</form>";
         }
         
@@ -121,26 +122,31 @@ if ( ($result) && $result->num_rows > 0)
           }
 
 
-         if($_SERVER["REQUEST_METHOD"] == "POST") 
-         { while($row1=$result->fetch_assoc());
-
-          foreach ($row1 as $key => $value)
+         // function delete()
+         // {
+         //if($_SERVER["REQUEST_METHOD"] == "POST") 
+          while($row1=$result->fetch_assoc())
           {
-            if(isset($_POST['$key']))
+        //  foreach ($row1 as $key => $value)
+          
+            if(isset($_POST['$id']))
             {
-              $query1="DELETE FROM `users` WHERE `id`='$key'";
+              echo "hello";
+              $query1="DELETE FROM `users` WHERE `id`='".$_POST['id']."'";
             
               if($conn->query($query1)==TRUE)
                 echo "deleted successfully";
               else
                 echo "error";
-          }
+            
+          
 
          }
        }
+     }
 
       
-  }
+  
         ?>
         <div id="work">
         <h1 style="color:purple;">WORK ON:-</h1>

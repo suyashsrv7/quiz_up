@@ -9,7 +9,8 @@
             	<input type="password" name="password"  placeholder="password"><?php echo $password1?><br/>
             	<input type="submit" name="login" value="LOGIN"><br>
 			</form>
-			<p onclick="window.location.href='signup.php'">New User|Register</p> 
+			<p onclick="window.location.href='signup.php'">New User|Register</p>
+			<a href="PHPmail/sendmail.php"> FORGOT PASSWORD</a>
 		</div>
 	</body>
 

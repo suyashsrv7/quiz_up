@@ -1,93 +1,163 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-#body
-{
-	background:url(th.jpg);
-	background-size:cover;
-}
-#value
-{
-	width:400px;
-	height:300px;
-	background-color:cyan;
-	text-align:center;
-	margin-left:450px;
-	margin-top:100px;
-}
-#action
-{
-	margin-left:450px;
-	margin-top:50px;
-	background-color:cyan;
-	padding-top:50px;
-	width:400px;
-	text-align:center;
-}
-</style>
-</head>
-<body>
-
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<div id="value">
-<b><i>ENTER VALUES</i></b><br><br>
-ID<input type="text" name="one"><br>
-TOPIC ID<input type="text" name="two"><br>
-QUESTION<input type="text" name="three"><br>
-OPTION 1<input type="text" name="four"><br>
-OPTION 2<input type="text" name="five"><br>
-OPTION 3<input type="text" name="six"><br>
-OPTION 4<input type="text" name="seven"><br>
-ANSWER<input type="text" name="eight"><br>
-ORIGINAL ID<input type="text" name="nine"><br><br><br><br>
-</div>
-<div id="action">
-<table>
-<tr>
-<td><input type="radio" name="insert">INSERT<br></td>
-<td><input type="radio" name="update">UPDATE<br></td>
-<td><input type="radio" name="delete">DELETE<br></td>
-</tr>
-</table>
-<input type="submit" name="submit">
-</form>
 <?php
+session_start();
 require("connection.php");
-if(($_SERVER["REQUEST_METHOD"] == "POST")&&isset($_POST['submit']))
+if(!isset($_SESSION['scrname']))
 {
-$one=$_POST['one'];
-$two=$_POST['two'];
-$three=$_POST['three'];
-$four=$_POST['four'];
-$five=$_POST['five'];
-$six=$_POST['six'];
-$seven=$_POST['seven'];
-$eight=$_POST['eight'];
-$nine=$_POST['nine'];
-if(isset($_POST['insert']))
-{
-$query = "INSERT INTO `questions`(`topic_id`, `question`,`option_1`,`option_2`,`option_3`,`option_4`,`answer`) VALUES ('$two','$three','$four','$five','$six','$seven','$eight')";
-
-
-	if($conn->query($query)==TRUE)
-		echo "INSERTED SUCCESSFULLY";
+	if($_SESSION['scrname'] == 'admin')
+		header("Location:admin.php");
+	else
+        header("Location:log-in.php");
 }
-if(isset($_POST['update']))
+else
 {
-	$query1="UPDATE `questions` SET `id`='$one',`topic_id`='$two',`question`='$three',`option_1`='$four',`option_2`='$five',`option_3`='$six',`option_4`='$seven',`answer`='$eight' WHERE `id`='$nine'";
-	if($conn->query($query1)==TRUE)
-		echo "UPDATED SUCCESSFULLY";
-}
-if(isset($_POST['delete']))
-{
-	$query2="DELETE FROM `questions` WHERE `id`='$nine'";
-	if($conn->query($query2)==TRUE)
-		echo "DELETED SUCCESSFULLY";
+	/*$topic = $_SESSION['topics-name'];
+	$query = "SELECT `topic_id` FROM `topics` WHERE `topic_name` = '$topic'";
+	$result = $conn->query($query);
+	$row = $result->fetch_assoc();
+	
+	$topic_id=$row['topic_id'];
+	$query = "SELECT * FROM `questions` WHERE `topic_id` = '$topic_id'";
+	$questions = many_rows($query);
+	
+	 $i = 0 ;*/
 
+	
 
-}
 }
 ?>
-</body>
+<html>
+	<head>
+		<style>
+		body{
+			background-color:  #ffb380;
+		}
+		.panel{
+			height:320px;
+			width: 500px;
+			margin:10% auto;
+			background-color: #4d4d4d;
+		}
+		.question-panel{
+			height:170px;
+			width:450px;
+			margin:0 auto;
+			border: 1px solid #fff;
+			color:#fff;
+			text-align: center;
+			font-size: 22px;
+		}
+		.option-panel{
+			height:130px;
+			width:450px;
+			margin:0 auto;
+			border:1px solid #fff;
+
+		}
+		.option1{
+			height:30px;
+			width:150px;
+			border: 1px solid #fff;
+			display:inline-block;
+			margin-top: 20px;
+			margin-left: 45px;
+			text-align: center:;
+		}
+		button{
+			height:30px;
+			width:150px;
+			border:none;
+			background-color:  #ff6600;
+		}
+		button:hover{
+			cursor:pointer;
+		}
+		</style>
+	</head>
+	<body onload = "show();">
+		<script>
+		
+		 function show(){
+
+
+ 
+ 	
+      var x= new XMLHttpRequest();
+        x.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             { 
+			data = this.responseText.split ( "[BRK]" );
+			document.getElementById("option1").innerHTML = data[1];
+			document.getElementById("option2").innerHTML = data[2];
+			document.getElementById("option3").innerHTML = data[3];
+ 			document.getElementById("option4").innerHTML = data[4];
+
+                document.getElementById("question").innerHTML = data[0];
+            }
+        };
+        x.open("GET","data.php",true);
+        x.send();
+    }
+
+
+      /*var x1= new XMLHttpRequest();
+        x1.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             {
+                document.getElementById("option1").innerHTML = this.responseText;
+            }
+        };
+        x1.open("GET","data1.php",true);
+        x1.send();
+    
+
+      var x2= new XMLHttpRequest();
+        x2.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             {
+                document.getElementById("option2").innerHTML = this.responseText;
+            }
+        };
+        x2.open("GET","data2.php",true);
+        x2.send();
+
+
+      var x3= new XMLHttpRequest();
+        x3.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             {
+                document.getElementById("option3").innerHTML = this.responseText;
+            }
+        };
+        x3.open("GET","data3.php",true);
+        x3.send();
+		 
+
+
+      var x4= new XMLHttpRequest();
+        x4.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             {
+                document.getElementById("option4").innerHTML = this.responseText;
+            }
+        };
+        x4.open("GET","data4.php",true);
+        x4.send();
+		 }*/
+		</script>
+		<div class="panel">
+			<div class="question-panel" ><p id="question"></p></div>
+			<div class="option-panel">
+				<div class="option1"><button id="option1" onclick = "show();"></button></div>
+				<div class="option1"><button id="option2" onclick = "show();"></button></div>
+				<div class="option1"><button id="option3" onclick = "show();"></button></div>
+				<div class="option1"><button id="option4" onclick = "show();"></button></div>
+			</div>
+		</div>
+
+	</body>
 </html>

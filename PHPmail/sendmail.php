@@ -26,7 +26,7 @@ $mail->WordWrap = 50;                                 // Set word wrap to 50 cha
 //$mail->addAttachment('/images/image.jpg', 'new.jpg'); // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
  
-$mail->Subject = 'this works';
+$mail->Subject = 'password reset';
 $mail->Body    = 'it works! <b>yeah!</b>';
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
  
@@ -40,5 +40,6 @@ if(!$mail->send()) {
    exit;
 }
  
-echo 'Message has been sent';
- 
+
+echo "<h2>Reset link has been sent to your e-mail.</h2>";
+ ?>
