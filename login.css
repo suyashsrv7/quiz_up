@@ -1,0 +1,232 @@
+*{   box-sizing: border-box;
+    margin: 0; 
+   padding: 0;
+overflow: hidden;
+}
+.background	{
+	background-color: #172f3a;
+	margin:0;
+	width: 100%;
+	overflow:hidden;
+}
+[class*="col-"]
+   {
+   	float:left;
+   	padding: 15px;
+   }
+   .row::after
+   {
+   	content: "";
+   	clear: both;
+   	display: table;
+   	padding: 30px;
+   }
+/*small screen*/
+    .col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+/* medium screen */
+@media(min-width: 400px){
+	.col-mid-1 {width: 8.33%;}
+	.col-mid-2 {width: 16.66%;}
+	.col-mid-3 {width: 25%;}
+	.col-mid-4 {width: 33.33%;}
+	.col-mid-5 {width: 41.66%;}
+	.col-mid-6 {width: 50%;}
+	.col-mid-7 {width: 58.33%;}
+	.col-mid-8 {width: 66.66%;}
+	.col-mid-9 {width: 75%;}
+	.col-mid-10 {width: 83.33%;}
+	.col-mid-11 {width: 91.66%;}
+	.col-mid-12 {width: 100%;}
+/* large screen */
+@media(min-width: 940px){
+	.col-lg-1 {width: 8.33%;}
+	.col-lg-2 {width: 16.66%;}
+	.col-lg-3 {width: 25%;}
+	.col-lg-lg-4 {width: 33.33%;}
+	.col-lg-5 {width: 41.66%;}
+	.col-lg-6 {width: 50%;}
+	.col-lg-7 {width: 58.33%;}
+	.col-lg-8 {width: 66.66%;}
+	.col-lg-9 {width: 75%;}
+	.col-lg-10 {width: 83.33%;}
+	.col-lg-11 {width: 91.66%;}
+	.col-lg-12 {width: 100%;}
+}
+.link{
+	left:34%;
+	right:0;
+	top: 72%;
+	margin: auto;
+	position: absolute;
+    }
+.welcome{
+	    left:0;
+	    right:0;
+	    margin: auto;
+        width:400px ;
+        height: 200px;
+        font-size: 40px;
+        font-style: 'Indie Flower', cursive;
+        border-radius: 50px;
+        position: absolute;
+        color: #52CECB;
+        text-align: center;
+        text-shadow: 3px 4px white;
+}	
+.box{
+	    max-width: 470px;
+		max-height:600px;
+		position: absolute;
+		border-bottom: 8px, black;
+		
+		background-color: #e1e7ea;
+		
+		bottom: 0;
+		left: 0;
+		top: 0;
+		right: 0;
+		margin:auto;
+box-shadow: 4px 4px 8px #43aee0;
+
+}
+
+.RegisterOPTION:hover {
+       width :450px;
+       height: 580px;
+       bottom: 0;
+		left: 0;
+		top: 0;
+		right: 0;
+		margin:auto;
+		box-shadow: 2px 2px 10px #43aee0;
+}
+.RegisterOPTION{
+	    top: 60px;
+	    left: 0px;
+	    right: 0;
+	    
+	    margin: auto;
+	    width: 200px;
+		height:30px;
+		position: absolute;
+		 background-color: #1c77a1 ;
+		border-radius: 5px;
+		color: white;
+		text-align: center;
+		transition: width height ;	
+		border:5px;
+		font-family: 'Indie Flower', cursive;
+		font-size: 20px;
+		font-weight:bolder;
+		box-shadow: 2px 2px 2px white;	
+		letter-spacing: 2px;
+}
+.login{
+	    bottom: 0;
+		left: 0;
+		top: 0;
+		right: 0;
+		margin:auto;
+	    width: 400px;
+		height:250px;
+		position: absolute;
+		 background-color: #172f3a;
+		border-radius: 4px;
+		padding-top: 50px;
+		backface-visibility: hidden;
+		padding-right: 35px;
+		box-shadow: 2px 2px 3px #43aee0;
+		
+}
+.firstname,.lastname,.username,.password,.email,.Confirmpassword
+{
+	background-color: #F9F4F4;
+	width: 340px;
+	height:30px;
+	margin: 20px;
+	margin-left: 35px;
+	position: relative;
+	border-radius: 10px;
+	padding-left: 15px;
+	backface-visibility: hidden;
+	font-family: 'Indie Flower', cursive;
+	font-size:16px;
+	letter-spacing: 3px;
+	font-weight: bolder;
+}
+.file{
+	width: 85px;
+	margin:auto;
+	left:-1% ;
+	position: relative;
+	border-radius: 10px;
+	padding-left:0 px;
+    }
+.firstname:hover,.lastname:hover,.username:hover,.password:hover,.email:hover,.Confirmpassword:hover,.register:hover
+	{
+		box-shadow: 3px 3px 5px #43aee0;
+		opacity: 1;
+	}
+.loggin{
+	background-color: #52CECB;
+	position: relative;
+	width: 100%;
+	height:40px;
+	margin-left: 5px;
+	cursor: pointer;
+	color: white;
+	font-family: 'Indie Flower', cursive;
+	letter-spacing: 3px;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	animation-name: reg;
+	animation-duration: 2s;
+	animation-iteration-count: infinite; 
+	font-size:15px;
+	left: 5%;
+	margin: auto;
+}
+
+@keyframes reg {
+    from {background-color: #ccc;}
+    to {background-color:#52CECB ;}
+}
+.register1{
+	
+	background-color: #52CECB;
+	position: absolute;
+	width: 100%;
+	height:40px;
+	top:88%;
+	cursor: pointer;
+	color: white;
+	font-family: 'Indie Flower', cursive;
+	letter-spacing: 3px;
+	font-size:10px;
+	text-align: center;
+	border: none;
+
+	animation-name: regg;
+	animation-duration: 2s;
+	animation-iteration-count: infinite; 
+	font-size:15px;
+	left: 0%;
+
+}
+@keyframes regg {
+    from {background-color: #2c5060;}
+    to {background-color:#172f3b ;}
+}
+<!--choose file issue , register buttun key neechey hai-->

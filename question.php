@@ -73,33 +73,8 @@ else
 		}
 		</style>
 	</head>
-	<body onload = "show1();">
-		<h1><div id="timer" style="text-align:center;">TIME</div></h1>
-			<script>
-				var score=0;
-				var t=0;
-				time();
-				function time()
-				{
-					var id=setInterval(frame,1000);
-					function frame()
-					{
-						t++;
-						document.getElementById("timer").innerHTML=t;
-						if(t>10)
-						{
-				
-							clearInterval(id);
-							window.location.href="log-in.php";
-					}
-}
-
-
-
-				}
-			function show1(z)
-
-			{show();
+	<body onload = "show();">
+		<script>
 		
 		 function show(){
 
@@ -116,40 +91,72 @@ else
 			document.getElementById("option2").innerHTML = data[2];
 			document.getElementById("option3").innerHTML = data[3];
  			document.getElementById("option4").innerHTML = data[4];
- 			
+
                 document.getElementById("question").innerHTML = data[0];
-                var k=data[5];
- 			check(k);
             }
         };
         x.open("GET","data.php",true);
         x.send();
     }
 
-    	function check(k)
-    	{  console.log(k);
-    		//var y=document.getElementById("z");
-    		console.log(z);
-    		if(z==k)
-    			score=score+10;
-    		document.getElementById("ans").innerHTML=score;
+
+      /*var x1= new XMLHttpRequest();
+        x1.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             {
+                document.getElementById("option1").innerHTML = this.responseText;
+            }
+        };
+        x1.open("GET","data1.php",true);
+        x1.send();
+    
+
+      var x2= new XMLHttpRequest();
+        x2.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             {
+                document.getElementById("option2").innerHTML = this.responseText;
+            }
+        };
+        x2.open("GET","data2.php",true);
+        x2.send();
 
 
+      var x3= new XMLHttpRequest();
+        x3.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             {
+                document.getElementById("option3").innerHTML = this.responseText;
+            }
+        };
+        x3.open("GET","data3.php",true);
+        x3.send();
+		 
 
-    	}
-    }
 
+      var x4= new XMLHttpRequest();
+        x4.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200)
+             {
+                document.getElementById("option4").innerHTML = this.responseText;
+            }
+        };
+        x4.open("GET","data4.php",true);
+        x4.send();
+		 }*/
 		</script>
 		<div class="panel">
 			<div class="question-panel" ><p id="question"></p></div>
 			<div class="option-panel">
-				<div class="option1"><button id="option1" onclick = "show1(this.id);"></button></div>
-				<div class="option1"><button id="option2" onclick = "show1(this.id);"></button></div>
-				<div class="option1"><button id="option3" onclick = "show1(this.id);"></button></div>
-				<div class="option1"><button id="option4" onclick = "show1(this.id);"></button></div>
+				<div class="option1"><button id="option1" onclick = "show();"></button></div>
+				<div class="option1"><button id="option2" onclick = "show();"></button></div>
+				<div class="option1"><button id="option3" onclick = "show();"></button></div>
+				<div class="option1"><button id="option4" onclick = "show();"></button></div>
 			</div>
-			<div class="option1"><button id="ans">SCORE</button></div>
-
 		</div>
 
 	</body>

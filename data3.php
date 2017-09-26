@@ -1,6 +1,7 @@
 <?php
 session_start();
 require("connection.php");
+//require("data.php");
 	$topic = $_SESSION['topics-name'];
 	$query = "SELECT `topic_id` FROM `topics` WHERE `topic_name` = '$topic'";
 	$result = $conn->query($query);
@@ -10,8 +11,8 @@ require("connection.php");
 	$query = "SELECT * FROM `questions` WHERE `topic_id` = '$topic_id'";
 	$questions = many_rows($query);
 	
-	 $i = rand(0,9);
-	 echo $questions[$i]['question']."[BRK]".$questions[$i]['option_1']."[BRK]".$questions[$i]['option_2']."[BRK]".$questions[$i]['option_3']."[BRK]".$questions[$i]['option_4']."[BRK]".$questions[$i]['answer'];
+	 $i = $_SESSION['i'];
+	 echo $questions[$i]['option_3'];
 
 	
 ?>

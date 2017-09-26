@@ -1,13 +1,9 @@
-<?php
-require("process.php");
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" type="text/css" href="login.css">
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="qz.css">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"
 	<title></title>
 </head>
 <body class="background row">
@@ -27,22 +23,24 @@ require("process.php");
 	</svg>
 		
 	    <div class="box col-10 col-mid-10">	
-	    				    <div class="welcome"> <h1>Welcome</h1> </div>
+	    				
 	    					<div class="login">
-	    						<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-						    	<input class="username"  name="scrname" placeholder="USER NAME"></input><span><?php echo $uname1?></span>
-									<input class="password" type="password" name="password" placeholder="PASSWORD"></input><span><?php echo $password1?></span>
-									<input class="loggin" type="submit" name="login" value="LOGIN" ></input></form>
+						    	<input class="username" placeholder="USER NAME"></input>
+									<input class="password" type="password" placeholder="PASSWORD"></input>
+									<input class="loggin" type="button" name="button" value="LOGIN" ></input> 
 						    </div>
-						    			<div class="link">
-						    				<p onclick="window.location.href='signup.php'">New User|Register</p>
-											<a href="PHPmail/sendmail.php"> FORGOT PASSWORD</a>
-										</div>
-
-						    
+						    <div class=" RegisterOPTION">New here ??
+									<input class="firstname" placeholder="FIRST NAME"></input>
+									<input class="lastname" placeholder="LAST NAME"></input>
+									<input class="username" placeholder="USER NAME"></input>
+									<input class="password" type="password" placeholder="PASSWORD"></input>
+									<input class="Confirmpassword" type="password" placeholder="CONFIRM PASSWORD"></input>
+									<input class="email" placeholder="E-MAIL"></input>
+									<input class="file" type="FILE" placeholder="FILE"></input>
+									<input class="register1" type="button" name="button" value="REGISTER" ></input> 
+						    </div>
 						    
 	    </div>
-
 
 </body>
 </html>
