@@ -1,0 +1,7 @@
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<polygon id="s" fill="#E6E6E6" points="52.224,32.238 61.356,27.549 59.612,37.481 67,44.515 56.79,45.964 52.224,55 47.657,45.964 
+	37.447,44.515 44.835,37.481 43.091,27.549 "/>
+	<animate xlink:href="#s" attributeName="fill" from="#72e4ea" to="#eee" dur="1s" repeatCount="indefinite" />
+</svg>
