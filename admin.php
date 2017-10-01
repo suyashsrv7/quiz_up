@@ -1,7 +1,8 @@
 <?php
 
 	require("connection.php");
-
+	require("admin_query.php");
+	
 	if(isset($_SESSION['scrname']))
 	{
 		if($_SESSION['scrname'] != 'admin')
@@ -10,23 +11,7 @@
 		}
 	}
 	
-	$query = "SELECT * FROM `users` WHERE 1";
-	$users = many_rows($query);
-	$num_users = count($users);
-
-	$query = "SELECT * FROM `categories` WHERE 1";
-	$categories = many_rows($query);
-	$num_categories = count($categories);
-	$table1 = 'users';
-
-	$query = "SELECT topics.topic_name, categories.category_name, categories.category_id FROM topics INNER JOIN categories ON topics.category_id=categories.category_id";
-	$topics = many_rows($query);
-	$num_topics = count($topics);
-
-	$query = "SELECT questions.question, questions.option_1, questions.option_2,questions.option_3,questions.option_4,questions.answer,topics.topic_name FROM questions INNER JOIN topics ON questions.topic_id=topics.topic_id";
-	$questions = many_rows($query);
-	$num_questions = count($questions);
-
+	
 
 
 ?>
@@ -86,11 +71,11 @@
 
 		<p><div class = 'section' >USERS</div>      : <?php echo $num_users ; ?></p>
 
-		<p><div class = 'section'>CATEGORIES</div> : <?php echo $num_categories ; ?></p><a href = 'addnewcontent.php?content=categories'>Add new category</a>
+		<p><div class = 'section'>CATEGORIES</div> : <?php echo $num_categories ; ?></p><a href = "addnewcontent.php?content=categories">Add new category</a>
 
-		<p><div class = 'section'>TOPICS</div>     : <?php echo $num_topics ; ?></p><a href = ''>Add new topic</a>
+		<p><div class = 'section'>TOPICS</div>     : <?php echo $num_topics ; ?></p><a href = "addnewcontent.php?content=topics">Add new topic</a>
 
-		<p><div class = 'section'>QUESTIONS</div>  : <?php echo $num_questions; ?></p><a href = ''>Add new question</a>
+		<p><div class = 'section'>QUESTIONS</div>  : <?php echo $num_questions; ?></p><a href = "addnewcontent.php?content=questions">Add new question</a>
 
    </div> 
 
