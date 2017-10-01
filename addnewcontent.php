@@ -2,25 +2,109 @@
 	require("connection.php");
 	require("admin_query.php");
 	$content = $_GET['content'] ; 
-
-	if( isset($_POST['ADD']) && ($content == 'categories') )
+	$error = null;
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-	    $item = $_POST['category'];
-		$query = "INSERT INTO `categories`(`category_name`) VALUES ('$item')";
-		$result = $conn->query($query);
-		if($result)
+		if( (isset($_POST['add'])) && ($content == 'categories') && (!empty($_POST['category'])))
 		{
-			header("Location:admin.php");
+		    $item = $_POST['category'];
+		    
+		    for($i = 0 ; $i < $num_categories; $i++ )
+		    {
+		    	if($categories[$i]['category_name'] == $item)
+		    	{
+		    		$error = 'already exists';
+		        }
+		    }
+		    if(!isset($error))
+		    {
+				$query = "INSERT INTO `categories`(`category_name`) VALUES ('$item')";
+				$result = $conn->query($query);
+				if($result)
+				{
+					header("Location:admin.php");
+				}
+				
+			}
+		}
+
+		else if((isset($_POST['add'])) && ($content == 'topics') )
+		{
+			if( (!empty($_POST['category_select'])) && (!empty($_POST['topic'])) )
+			{
+				$categoryname = $_POST['category_select'];
+				$topicname = $_POST['topic'];
+				for($i = 0 ; $i < $num_topics; $i++)
+				{
+					if($topics[$i]['topic_name'] == $topicname)
+		    		{
+		    			$error = 'already exists';
+		        	}
+				}
+				$query = "SELECT `category_id` FROM `categories` WHERE `category_name` = '$categoryname'";
+				$row= run_query($query); $categoryid = $row['category_id']; 
+				if(!isset($error))
+				{
+					$query = "INSERT INTO `topics`(`category_id`, `topic_name`) VALUES ('$categoryid','$topicname')";
+					$result = $conn->query($query);
+					if($result)
+					{
+						header("Location:admin.php");
+					}
+				}
+
+			}
+			else
+			{
+				$error = 'all fields are required';
+			}
+
+		}
+
+		else if((isset($_POST['add'])) && ($content == 'questions'))
+		{
+			echo htmlspecialchars($_POST['question']);
+			if( (!empty($_POST['topic-select'])) && (!empty($_POST['question'])) && (!empty($_POST['option1'])) && (!empty($_POST['option2'])) && (!empty($_POST['option3'])) && (!empty($_POST['option4'])) && (!empty($_POST['answer'])))
+			{
+				$topicname = $_POST['topic-select'];
+				$question =  $_POST['question'] ;
+				$option1 = $_POST['option1'];
+				$option2 = $_POST['option2'];
+				$option3 = $_POST['option3'];
+				$option4 = $_POST['option4'];
+				$ans = $_POST['answer'];
+				for($i = 0 ; $i < $num_questions ; $i++)
+				{
+					if($questions[$i]['question'] == $question)
+					{
+						$error = "already exists";
+					}
+				}
+				$query = "SELECT `topic_id` FROM `topics` WHERE `topic_name` = '$topicname'";
+				$row = run_query($query); $topicid = $row['topic_id'];
+				if(!isset($error))
+				{
+					$query = "INSERT INTO `questions`(`topic_id`, `question`, `option_1`, `option_2`, `option_3`, `option_4`, `answer`) VALUES ('$topicid','$question','$option1','$option2','$option3','$option4','$ans')";
+					$result = $conn->query($query);
+					if($result)
+					{
+						header("Location:admin.php");
+					}
+				}
+
+			}
+			else
+			{
+				$error = 'all fields are required';
+			}
 		}
 		else
 		{
-			
-		}
-	}
-	else
-	{
-		echo "please fill the field";
-	}
+			$error =  "please fill the field";
+
+		} 
+
+    }
 
 	
 
@@ -67,10 +151,16 @@
 		}
 	</script>
 	<title></title>
+	<style type="text/css">
+		button{
+			float :right;
+		}
+	</style>
 </head>
 <body>
-
-	<form action = '' method = 'post' name = 'myform'>
+	<button onclick = "window.location.href = 'admin.php'">BACK</button>
+	<div id = 'error'><?php echo $error ;?></div>
+	<form action = "addnewcontent.php?content=<?php echo $content; ?>" method = 'post' name = 'myform'>
 		
 		<div id = 'add-category'>
 
@@ -82,13 +172,13 @@
 
 		<div id = 'add-topic'>
 
-			<select name = 'category'>
+			<select name = 'category_select'>
 
 			<?php
 
 				for($i = 0 ; $i < $num_categories ; $i++ )
 				{
-					echo "<option>".$categories[$i]['category_name']."</option>";
+					echo "<option value = '".$categories[$i]['category_name']."'>".$categories[$i]['category_name']."</option>";
 
 				}
 
@@ -103,7 +193,7 @@
 
 		<div id = 'add-question'>
 
-			<select name = 'topic'>
+			<select name = 'topic-select'>
 
 			<?php
 
@@ -116,7 +206,7 @@
 			?>
 
 			</select>
-			<textarea form = 'myform' name = 'question' placeholder = 'add question here'></textarea>
+			<textarea  name = 'question' placeholder = 'add question here'></textarea>
 			<input type="text" name="option1" placeholder = 'option1'>
 			<input type="text" name="option2" placeholder = 'option2'>
 			<input type="text" name="option3" placeholder = 'option3'>

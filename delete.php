@@ -4,9 +4,7 @@
 
 	$del_item = $_GET['del']; 
 	$del_from = $_GET['sec'];
-	echo $del_item ; 
-	echo $del_from ;
-
+	
 
 	if($del_from == 'users')
 		$query = "DELETE FROM `users` WHERE `scrname` = '$del_item'";
@@ -20,6 +18,9 @@
 	if($result == true)
 	{
 		header("Location:admin.php");
+	}
+	else{
+		echo "something went wrong";
 	}
 
 ?>
