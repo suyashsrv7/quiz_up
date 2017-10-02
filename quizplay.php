@@ -1,6 +1,7 @@
 <?php
 session_start();
 require("connection.php");
+
 if(isset($_POST['toid']))
 {
 	$fromid = $_POST['fromid'];
@@ -8,6 +9,7 @@ if(isset($_POST['toid']))
 	$topic_name = $_POST['topic_name'];
 	$query = "INSERT INTO `challenge_request`(`challenge_id`, `fromid`, `toid`, `topic_name`, `status`) VALUES ('NULL','$fromid','$toid','$topic_name','0')";
 	$conn->query($query);
+	unset($_SESSION['challenge']);
 	header('Location:questions.php');
 }
 $topic = $_SESSION['topics-name'];
@@ -23,116 +25,29 @@ $query = "SELECT * FROM `users` WHERE `scrname`='$user'";
 $row = run_query($query);
 $player1->get($row);
 
+//echo $_SESSION['challengeid'];
+
 ?>
 <html>
 	<head>
-		<style>
-		body{
-			background-color: #ffb380;
-		}
-		.playcard{
-			height:560px;
-			width:500px;
-			background-color: #4d4d4d;
-			margin:0 auto;
-			border-radius: 2px;
-			position: relative;
-		}
-		.player1{
-			position: absolute;
-			float: left;
-			height:80px;
-			width:200px;
-			
-			top:10px;
-
-
-		}
-		.player2{
-			position: absolute;
-			right:0px;
-			height:80px;
-			width:200px;
-			
-			top:10px;
-
-		}
-		.vs{
-			position: absolute;
-			
-			height:20px;
-			width:50px;
-			left:220px;
-			text-align: center;
-			color:#fff;
-			top:20px;
-		}
-		.player1-img{
-			height:70px;
-			width:70px;
-			border-radius: 50%;
-			
-			position:absolute;
-			top:4px;left:2px;
-		}
-		.player1-name{
-			height:30px;
-			width:120px;
-			position: absolute;
-			left:76px;
-			top:25px;
-			
-			text-align: center;
-			color:#fff;
-		}
-		.player2-img{
-			height:70px;
-			width:70px;
-			border-radius: 50%;
-			
-			position:absolute;
-			top:4px;right:2px;
-		}
-		.player2-name{
-			height:30px;
-			width:120px;
-			position: absolute;
-			right:76px;
-			top:25px;
-			
-			text-align: center;
-			color:#fff;
-		}
-		img{
-			height:70px;
-			width:70px;
-			border-radius: 50%;
-
-		}
-		.challenge{
-			height:40px;
-			width:170px;
-			border: 1px solid #ff6600;
-			position: absolute;
-			bottom:20px;
-			left:165px;
-		}
-		.btn{
-			height:40px;
-			width:170px;
-			border:none;
-			background-color: #ff6600;
-			font-size: 18px
-
-		}
-		.btn:hover{
-			cursor:pointer;
-
-		}
-		</style>
+			<link rel="stylesheet" type="text/css" href="quizplay.css">
+			 <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
 	</head>
-	<body>
+	<body class="background">
+		
 		<script>
+		window.addEventListener("DOMContentLoaded", function() {
+          if(<?php  if(isset($_SESSION['accept'])){echo "true";} else{echo "false";}?> )
+          {
+          	accept();
+          }
+          else if(<?php if(isset($_SESSION['challenge'])){echo "true";} else{echo "false";} ?>)
+          {
+          	challenge();
+          }
+
+        }, false);
+		
 		function setsubmit()
 		{
 			
@@ -142,8 +57,23 @@ $player1->get($row);
 			form.elements["topic_name"].value = '<?php echo $topic; ?>';
 			form.elements["status"].value = 0 ;
 			document.getElementById('form').submit();
+			window.Location.href ="questions.php"
 
 		}
+		function accept(){
+
+			document.getElementById('winlose').style.display = "none";
+			document.getElementById('challenge').style.display = 'none'; 
+		}
+		function challenge(){
+			
+			document.getElementById('winlose').style.display = 'none';
+			document.getElementById('score').style.display = 'none';
+			
+			document.getElementById('play').style.display = 'none';
+		}
+
+		
 		</script>
 		<form name='form' method='post' action='quizplay.php' id='form'>
 			
@@ -152,22 +82,53 @@ $player1->get($row);
 			<input type='hidden' value='' name='status' id="status">
 			<input type='hidden' value='' name="fromid" id="fromid" >
 		</form>
+		<div class="row" >
 
-		<div class="playcard" id='playcard'>
-			<div class="player1">
-				<div class="player1-img"><img src="<?php echo $player1->image ;?>"></div>
-				<div class="player1-name"><?php echo $player1->scrname;?></div>
-				
+			<div class="row winlose" id = 'winlose'>
+				<div class="col-mid-6 stat1" >win or loose</div>
+				<div class="col-mid-6 stat2" > win or loose</div>
 			</div>
-			<div class = "vs">VS</div>
-			<div class="player2">
-				<div class="player2-img"><img src="<?php echo $player2->image;?>"></div>
-				<div class="player2-name"><?php echo $player2->scrname;?></div>
-				
+			<div class="row player">
+
+				<div class="col-mid-5 player1" >
+					<div class= "img">
+					</div>
+					<div class="name">p1 <?php echo $player1->scrname;?>
+					</div>
+				</div>
+				<div class="col-mid-2 box">VS</div>
+				<div class="col-mid-5 player2" >
+					<div class= "img">
+					</div>
+					<div class="name">p2<?php echo $player2->scrname;?>
+					</div>
+				</div>
+
 			</div>
-			<div class="challenge"><button class="btn" onclick="setsubmit()">CHALLENGE</button></div>
-		</div>
-		<div class="start">
-		</div>
+			<div class= " row topic" id = 'topic'>
+						
+								<div class="col-mid-3 topic1" ></div> 
+								<div class="col-mid-3 topic2" ></div>
+								<div class="col-mid-3 topic3" ></div>
+								<div class="col-mid-3 topic4" ></div>
+		        <div class="image"></div>
+				<div class="nam"><?php echo $topic;?></div>
+			</div>
+			
+			<div class=" row score" id = 'score'>
+				<div class= "col-mid-4 num1"> num1</div>
+				<div class="col-mid-4 title">SCORE</div>
+				<div class ="col-mid-4 num2">num2</div>
+			</div>
+			
+			<div class="row play" id = 'play'>
+				<button >PLAY</button>
+			</div>
+			<div class="row challenge" id = 'challenge'>
+				<button onclick = "setsubmit();">CHALLENGE</button>
+			</div>
+	</div>
+		
 	</body>
+	
 </html>

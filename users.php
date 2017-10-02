@@ -1,57 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#body
-{
-	background:url(th.jpg);
-	background-size:cover;
-}
-#value
-{
-	width:400px;
-	height:300px;
-	background-color:cyan;
-	text-align:center;
-	margin-left:450px;
-	margin-top:100px;
-}
-#action
-{
-	margin-left:450px;
-	margin-top:50px;
-	background-color:cyan;
-	padding-top:50px;
-	width:400px;
-	text-align:center;
-}
-</style>
+	<link rel="stylesheet" type="text/css" href="adminpart.css">
+<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
 </head>
 
-<body>
+<body class="background">
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<div id="value"><br><br><br>
-<b><i>ENTER VALUES<br><br></i></b>
-ID<input type="text" name="one"><br>
-FIRSTNAME<input type="text" name="two"><br>
-LASTNAME<input type="text" name="three"><br>
-SCRNAME<input type="text" name="four"><br>
-PASSWORD<input type="text" name="five"><br>
-IMAGE<input type="text" name="six"><br>
-TYPE<input type="text" name="seven"><br>
-EMAIL<input type="text" name="eight"><br>
-ORIGINAL SCRNAME<input type="text" name="nine"><br><br><br><br>
+
+<div class="row">
+<div class="col-mid-12 value"><br><br><br>
+<b><h1>ENTER VALUES</h1><br><br></b>
+<input placeholder="ID" type="text" size="80" name="one"><br>
+<input placeholder="FIRSTNAME" type="text" size="80" name="two"><br>
+<input placeholder="LASTNAME" type="text" size="80" name="three"><br>
+<input placeholder="SCRNAME" type="text" size="80" name="four"><br>
+<input placeholder="PASSWORD" type="text" size="80" name="five"><br>
+<input placeholder="IMAGE" type="text" size="80" name="six"><br>
+<input placeholder="TYPE" type="text" size="80" name="seven"><br>
+<input placeholder="EMAIL" type="text" size="80" name="eight"><br>
+<input placeholder="ORIGINAL SCRNAME" type="text" size="80" name="nine"><br><br><br><br>
 </div>
-<div id="action">
-<table>
+</div>
+
+<div class="row">
+<div class="col-mid-12 action">
+<table cellspacing="10">
 <tr>
 <td><input type="radio" name="insert">INSERT<br><br></td>
 <td><input type="radio" name="update">UPDATE<br><br></td>
 <td><input type="radio" name="delete">DELETE<br><br></td>
 </tr>
 </table>
-<input type="submit" name="submit"><br>
+<input class="submit" type="submit" name="submit"><br>
 </div>
+</div>
+
 </form>
 <?php
 require("connection.php");

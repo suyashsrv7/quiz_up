@@ -1,54 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#body
-{
-	background:url(th.jpg);
-	background-size:cover;
-}
-#value
-{
-	width:400px;
-	height:100px;
-	background-color:cyan;
-	text-align:center;
-	margin-left:450px;
-	margin-top:100px;
-
-}
-#action
-{
-	margin-left:450px;
-	margin-top:50px;
-	background-color:cyan;
-	padding-top:50px;
-	width:400px;
-	text-align:center;
-}
-</style>
-
-
+<link rel="stylesheet" type="text/css" href="adminpart.css">
+<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
 </head>
-<body>
+<body class="background">
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<div id="value">
-<b><i>ENTER VALUES</i></b><br><br>
-ID<input type="text" name="one"><br>
-CATEGORY_NAME<input type="text" name="two"><br>
-ORIGINAL ID<input type="text" name="three"><br>
+
+<div class="row">
+<div class="col-mid-12 value">
+<b><h1>ENTER VALUES</h1></b><br><br>
+<input placeholder="ID" type="text" name="one" size="80" height="20" class=""><br>
+<input placeholder="CATEGORY NAME" type="text" size="80" height="20" name="two" class=""><br>
+<input placeholder="ORIGINAL ID" type="text" size="80"  name="three" class=""><br>
 </div>
-<div id="action">
-<table>
+</div>
+
+<div class="row">
+<div class="col-mid-12 action">
+<table cellspacing="10">
 <tr>
 <td><input type="radio" name="insert">INSERT<br></td>
 <td><input type="radio" name="update">UPDATE<br></td>
 <td><input type="radio" name="delete">DELETE<br></td>
 </tr>
 </table>
-<input type="submit" name="submit"><br>
+<input class="submit" type="submit" name="submit"><br>
 </div>
+</div>
+
 </form>
 
 <?php

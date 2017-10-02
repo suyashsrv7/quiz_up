@@ -73,7 +73,9 @@ else
 		}
 		</style>
 	</head>
-	<body onload = "show1();">
+	<body onload = "show();">
+		<form name = "form" id="form" method = "post" action = "display.php">
+			<input type = "hidden" name = "score" id= "score" value = ""></form>
 		<h1><div id="timer" style="text-align:center;">TIME</div></h1>
 			<script>
 				var score=0;
@@ -86,20 +88,22 @@ else
 					{
 						t++;
 						document.getElementById("timer").innerHTML=t;
-						if(t>10)
+						if(t>20)
 						{
 				
 							clearInterval(id);
-							window.location.href="log-in.php";
+							
+							document.getElementById("score").value = score;
+							document.getElementById('form').submit();
 					}
 }
 
 
 
 				}
-			function show1(z)
+			//function show1(z)
 
-			{show();
+			//{show();
 		
 		 function show(){
 
@@ -112,14 +116,15 @@ else
             if (this.readyState == 4 && this.status == 200)
              { 
 			data = this.responseText.split ( "[BRK]" );
+			 m=data[5];
 			document.getElementById("option1").innerHTML = data[1];
 			document.getElementById("option2").innerHTML = data[2];
 			document.getElementById("option3").innerHTML = data[3];
  			document.getElementById("option4").innerHTML = data[4];
  			
                 document.getElementById("question").innerHTML = data[0];
-                var k=data[5];
- 			check(k);
+                //var k=data[5];
+ 			
             }
         };
         x.open("GET","data.php",true);
@@ -129,24 +134,24 @@ else
     	function check(k)
     	{  console.log(k);
     		//var y=document.getElementById("z");
-    		console.log(z);
-    		if(z==k)
+    		console.log(m);
+    		if(m==k)
     			score=score+10;
     		document.getElementById("ans").innerHTML=score;
 
-
+    		show();
 
     	}
-    }
+    
 
 		</script>
 		<div class="panel">
 			<div class="question-panel" ><p id="question"></p></div>
 			<div class="option-panel">
-				<div class="option1"><button id="option1" onclick = "show1(this.id);"></button></div>
-				<div class="option1"><button id="option2" onclick = "show1(this.id);"></button></div>
-				<div class="option1"><button id="option3" onclick = "show1(this.id);"></button></div>
-				<div class="option1"><button id="option4" onclick = "show1(this.id);"></button></div>
+				<div class="option1"><button id="option1" onclick = "check(this.id);"></button></div>
+				<div class="option1"><button id="option2" onclick = "check(this.id);"></button></div>
+				<div class="option1"><button id="option3" onclick = "check(this.id);"></button></div>
+				<div class="option1"><button id="option4" onclick = "check(this.id);"></button></div>
 			</div>
 			<div class="option1"><button id="ans">SCORE</button></div>
 

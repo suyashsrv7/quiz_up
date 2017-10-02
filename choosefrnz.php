@@ -5,6 +5,7 @@
     if(isset($_POST['name']))
     {
     	$_SESSION['friend'] = $_POST['name'];
+    	$_SESSION['challenge'] = 'challenge';
     	header("Location:quizplay.php");
     }
 	if(!isset($_SESSION['topics-name']))

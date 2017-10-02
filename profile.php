@@ -7,11 +7,19 @@
 		$_SESSION['topics-name'] = $_POST['name'];
 		header("Location:choosefrnz.php");
 	}
-	if((isset($_POST['topic'])) &&(isset($_POST['friend'])))
+	if(isset($_POST['friend']))
 	{
-		$_SESSION['topics-name'] = $_POST['topic'];
+		
 		$_SESSION['friend'] = $_POST['friend'];
-		header("Location:quizplay.php");
+		$_SESSION['accept'] = 'accept';
+		$_SESSION['challengeid'] = $_POST['challengeid'];
+		$id = $_POST['challengeid'];
+		echo $id;
+		$query = "SELECT  `topic_name` FROM `challenge_request` WHERE `challenge_id` = `$id`";
+		$row = run_query($query);
+		$_SESSION['topics-name'] = $row['topic_name'];
+		echo $row['topic_name'];
+		//header("Location:quizplay.php");
 	}
 	if(isset($_SESSION['scrname']))
 	{
@@ -274,8 +282,9 @@
 				<input type = 'hidden' name = 'topic' >  
                 </form>
                 <form method = 'post' action = 'profile.php' id= 'form1' name = 'form1'>
-                	<input type = 'hidden' name ='topic' >
+                	
                 	<input type = 'hidden' name = 'friend'>
+                	<input type = 'hidden' name = 'challengeid'>
                 </form>
 				
 			</div>
@@ -302,7 +311,7 @@
 							<h4>Request from <strong>'".$challenger['scrname']."'<strong></h4>
 							<h4>Topic : ".$challenges[$i]['topic_name']."</h4>
 						</div>
-						<div class = 'status' id = '".$challenges[$i]['topic_name']."'><button onclick = 'play(this)'>Accept</button></div>
+						<div class = 'status' id = '".$challenges[$i]['challenge_id']."' onclick = 'play(this.id);'>Accept</div>
 						</div>";
 						$i++;
 					}
@@ -327,7 +336,7 @@
 					{
 					echo "<div class = 'box' >
 					<div class = 'topic-img'></div>
-					<div id = '".$followed[$i]['topic_name']."' class = 'topic-name' onclick = setsubmit(this)>".$followed[$i]['topic_name']."</div>
+					<div id = '".$followed[$i]['topic_name']."class = 'topic-name' onclick = setsubmit(this)>".$followed[$i]['topic_name']."</div>
 					</div>";$i++;
 					}
 				}
@@ -348,8 +357,11 @@
 						}
 						function play(e)
 						{
-							form1.elements['topic'].value = e.id;
+							console.log(e);
+							
 							form1.elements['friend'].value = "<?php echo $challenger['scrname'] ;?>";
+							form1.elements['challenegeid'] = e;
+							
 							document.getElementById('form1').submit();
 						}
 				</script>

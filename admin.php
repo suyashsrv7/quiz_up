@@ -146,7 +146,7 @@ if ( ($result) && $result->num_rows > 0)
   if(isset($_POST['users']))
     header("Location:users.php");
   if(isset($_POST['topics']))
-  header("Location:topics.php");
+  header("Location:topic.php");
   if(isset($_POST['questions']))
   header("Location:questions.php");
       if(isset($_POST['category']))

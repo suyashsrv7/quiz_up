@@ -1,0 +1,105 @@
+*{  box-sizing: border-box;
+    margin: 0; 
+   padding: 0;}
+   .background
+    {
+      background-color: #172f3a;
+      width: 100vw;
+      height: 100vh;    
+      font-family:'Encode Sans Condensed', sans-serif ;
+    }
+
+   [class*="col-"]
+   {
+    float:left;
+    padding: 15px;
+   }
+   .row::after
+   {
+    content: "";
+    clear: both;
+    display: table;
+    margin: 10px;
+   }
+/*small screen*/
+    .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+/* medium screen */
+@media(min-width: 400px){
+  .col-mid-1 {width: 8.33%;}
+  .col-mid-2 {width: 16.66%;}
+  .col-mid-3 {width: 25%;}
+  .col-mid-4 {width: 33.33%;}
+  .col-mid-5 {width: 41.66%;}
+  .col-mid-6 {width: 50%;}
+  .col-mid-7 {width: 58.33%;}
+  .col-mid-8 {width: 66.66%;}
+  .col-mid-9 {width: 75%;}
+  .col-mid-10 {width: 83.33%;}
+  .col-mid-11 {width: 91.66%;}
+  .col-mid-12 {width: 100%;}
+
+
+.value
+{
+  padding: 10px;
+  letter-spacing: 5px;
+  background-color:#eee;
+  text-align:center;
+  left:0;right:0;top:0;botom:0;
+  margin:auto;
+}
+
+     
+.input{
+    background-color:#172f3a;
+    text-align: center;
+}
+.action
+{
+  background-color:#eee;
+  height:200px;
+  text-align:center;
+  left:0;right:0;top:0;botom:0;
+  margin:auto;
+}
+td
+{
+      border-collapse: separate ;
+      border:1 solid #eee;
+      background-color: #3ab3eb;
+      padding: 5px 30px;
+      color: white;
+      font-size:20px;
+}
+table{
+
+  left:0;right:0;top:0;botom:0;
+      margin:auto;
+}
+.submit
+{
+      background-color: white;
+      border: 1px solid #172f3a;
+      color: #172f3a;
+      padding: 10px 14px;
+      font-size: 15px;
+      font-family: 'Encode Sans Condensed', sans-serif ;
+      float: right;
+}
+ .submit:hover 
+ { 
+     background-color: #3ab3eb;
+     border: 1px solid white;
+     color: white;
+ }    

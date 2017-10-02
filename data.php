@@ -10,7 +10,8 @@ require("connection.php");
 	$query = "SELECT * FROM `questions` WHERE `topic_id` = '$topic_id'";
 	$questions = many_rows($query);
 	
-	 $i = rand(0,9);
+	 $i = rand(1,9);
+	
 	 echo $questions[$i]['question']."[BRK]".$questions[$i]['option_1']."[BRK]".$questions[$i]['option_2']."[BRK]".$questions[$i]['option_3']."[BRK]".$questions[$i]['option_4']."[BRK]".$questions[$i]['answer'];
 
 	
