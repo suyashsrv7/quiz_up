@@ -1,16 +1,12 @@
 <?php
-
+	session_start();
 	require("connection.php");
 	require("admin_query.php");
 	
-	if(isset($_SESSION['scrname']))
+	if((isset($_SESSION['scrname'])) && ($_SESSION['scrname'] != "admin"))
 	{
-		if($_SESSION['scrname'] != 'admin')
-		{
-			header("Location:log-in.php");
-		}
+		header("location:playerprofile.php");
 	}
-	
 	
 
 

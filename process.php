@@ -3,16 +3,9 @@
  require("connection.php");
   if(isset($_SESSION['scrname']))
   {
-    if($_SESSION['scrname'] == 'admin')
-    {
-       header("Location:admin.php");
-
-    }
-    else
-    {
-      header("Location:profile.php");
-    }
+    header("Location:playerprofile.php");
   }
+
   function display_msg(){
   	echo 'wrong'; 
   }
@@ -164,7 +157,7 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login'])))
                if(!isset($_SESSION['scrname']))
                {
                  $_SESSION['scrname'] = $scrname;
-                 header("Location:profile.php");
+                 header("location:playerprofile.php");
                } 
 
             }

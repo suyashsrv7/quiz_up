@@ -1,4 +1,19 @@
 <?php
+	if(!isset($_GET['content']))
+	{
+		if(isset($_SESSION['scrname']) && ($_SESSION['scrname'] != 'admin'))
+		{
+			header("Location:playerprofile.php");
+		}
+		if(isset($_SESSION['scrname']) && ($_SESSION['scrname'] == 'admin'))
+		{
+			header("Location:admin.php");
+		}
+		if(!isset($_SESSION['scrname']))
+		{
+			header("Location:log-in.php");
+		}
+	}
 	require("connection.php");
 	require("admin_query.php");
 	$content = $_GET['content'] ; 
