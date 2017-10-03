@@ -26,11 +26,12 @@ require("process.php");
 		<animate xlink:href="#circle2" attributeName="stroke-width" from="1" to="4" dur="2.5s"  repeatCount="indefinite" />
 		<animate xlink:href="#circle3" attributeName="stroke-width" from="4" to="6" dur="3s"  repeatCount="indefinite" />
 	</svg>
-		
+		<div><?php echo $error; ?></div>
 	    <div class="box col-10 col-mid-10">	
 	    				
 	    					
 						    <div class=" RegisterOPTION">New here ??
+
 						    	<form  action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" onblur="validateForm();"  enctype="multipart/form-data" name="myForm">
 									<input class="firstname" name="firstname" onfocus="delete_err_msg('error1');" onblur="validateForm();" placeholder="FIRST NAME"></input><span id="error1"></span><br/>
 									<input class="lastname" name="lastname" onfocus="delete_err_msg('error2');" onblur="validateForm();" placeholder="LAST NAME"></input><span id="error2"></span><br/>
@@ -40,8 +41,10 @@ require("process.php");
 									<input class="email" name="email" onfocus="delete_err_msg('error6');" onblur="validateForm();" placeholder="E-MAIL"></input><span id="error6"></span><br/>
 									<input class="file" name="file" onfocus="delete_err_msg('error7');" onblur="validateForm();" type="FILE" placeholder="FILE"></input><span id="error7"></span><br/>
 									<input class="register1" type="submit" name="register" value="REGISTER" ></input> 
+
 								</form>
 						    </div>
+						    <div><?php echo $error; ?></div>
 						    
 	    </div>
 

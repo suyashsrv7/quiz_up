@@ -7,7 +7,7 @@ if(isset($_SESSION['scrname']))
 {
       if($_SESSION['scrname'] == 'admin')
       {
-            header("Location:admin.php");
+            header("Location:adminpage.php");
       }
 
 }
@@ -37,7 +37,7 @@ $challenges = many_rows($query);//returns all requests
 </head>
 <body class="background">
 	<div class="row" >
-	<nav><a href=""><i class="fa fa-arrow-left back"></i></a>Profile<div class="logo"><img src="Qlogo.svg"></div></nav>
+	<nav><a href=""><i class="fa fa-arrow-left back"></i></a>Profile<a href = 'logout.php'><i class="fa fa-user-times logou"></i></a></nav>
      </div>
       <div class="row">
       			<div class="col-mid-7  pic">
@@ -60,8 +60,8 @@ $challenges = many_rows($query);//returns all requests
                                                 $query = "SELECT  `scrname` FROM `users` WHERE `id` = '$fromid'";
                                                 $challenger = run_query($query);
                                                 echo "<div class='request1'>".$challenges[$i]['topic_name']."</div>
-                                                      <div class='request2'>".$challenger."</div>
-                                                      <a href=''><div class='button'></div></a>";
+                                                      <div class='request2'>".$challenger['scrname']."</div>
+                                                      <a href='createsession.php?topic=".$challenges[$i]['topic_name']."&opponent=".$challenger['scrname']."'><div class='button'></div></a>";
                                           }
                                     }
                               ?>
@@ -84,7 +84,7 @@ $challenges = many_rows($query);//returns all requests
                                           {
                                                 if($categories[$i]['category_id'] == $topics[$j]['category_id'])
                                                 {
-                                                      echo "<td><a href = ''>".$topics[$j]['topic_name']."</a></td>";
+                                                      echo "<td><a href = 'createsession.php?topic=".$topics[$j]['topic_name']."'>".$topics[$j]['topic_name']."</a></td>";
                                                 }
                                           }
 

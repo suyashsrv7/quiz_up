@@ -1,13 +1,15 @@
 <?php
  session_start();
  require("connection.php");
+ $error =null;
   if(isset($_SESSION['scrname']))
   {
     header("Location:playerprofile.php");
   }
+  
 
   function display_msg(){
-  	echo 'wrong'; 
+  	$error ="*all fields required";
   }
 
   
@@ -108,7 +110,7 @@ else
           }
         }
 
-        $password_encrypt = md5($password);
+        $password_encrypt = sha1($password);
         $query = "INSERT INTO `users`(`id`, `firstname`, `lastname`, `scrname`, `password`,`image`,`email`) VALUES ('NULL','$firstname','$lastname','$scrname','$password_encrypt','$path','$email')";
   
         if ($conn->query($query)==TRUE)

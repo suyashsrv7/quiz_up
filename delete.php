@@ -17,7 +17,7 @@
 	$result = $conn->query($query);
 	if($result == true)
 	{
-		header("Location:admin.php");
+		header("Location:adminpage.php");
 	}
 	else{
 		echo "something went wrong";

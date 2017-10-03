@@ -1,8 +1,18 @@
 <?php
-	session_start();
 	if(!isset($_GET['content']))
 	{
-		header("Location:adminpage.php");
+		if(isset($_SESSION['scrname']) && ($_SESSION['scrname'] != 'admin'))
+		{
+			header("Location:playerprofile.php");
+		}
+		if(isset($_SESSION['scrname']) && ($_SESSION['scrname'] == 'admin'))
+		{
+			header("Location:admin.php");
+		}
+		if(!isset($_SESSION['scrname']))
+		{
+			header("Location:log-in.php");
+		}
 	}
 	require("connection.php");
 	require("admin_query.php");
@@ -156,7 +166,7 @@
 		}
 	</script>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/addnewcontent1.css">
+	<link rel="stylesheet" type="text/css" href="addnewcontent1.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Kalam" rel="stylesheet">
